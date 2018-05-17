@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 1 задание
+  //var a = 1, b = 1, c, d;
+  //c = ++a; alert(c);// 2  потому что ++ это инкремент, прибавляющий единицу
+  // console.log('a='+a);
+  //d = b++; alert(d); // 1  потому что постфиксная форма возвращает старое значение до прибавления, а только потом прибавляет
+  //c = (2+ ++a); alert(c); // 5 a=2+1=3 да еще +2 = 5
+  // console.log('b='+b);
+  //d = (2+ b++); alert(d); // 4  b=1+1=2 да еще +2 = 4
+  //alert(a); // 3 два раза инкрементировали
+  //alert(b); // 3 2 раза постинкрементировали
+
+
+  //2 задание
+  //var a = 2;
+  //var x = 1 + (a *= 2); x=5 потому, что a=a*2 т.е.4+1=5
+
+  // 3 задание
+  var a = +prompt('Введите первое число'), b = +prompt("Введите второе число");
+  if (a > 0 && b > 0) {
+    alert(a - b);
+  } else if (a < 0 && b < 0) {
+    alert(a * b);
+  } else if (a > 0 && b < 0 || a < 0 && b > 0) {
+    alert(a + b);
+  }
+
+  // 4 задание
+  var x =6;
+  switch (x) {
+    case 1:
+      console.log(x++);
+    case 2:
+      console.log(x++);
+    case 3:
+      console.log(x++);
+    case 4:
+      console.log(x++);
+    case 5:
+      console.log(x++);
+    case 6:
+      console.log(x++);
+    case 7:
+      console.log(x++);
+    case 8:
+      console.log(x++);
+    case 9:
+      console.log(x++);
+    case 10:
+      console.log(x++);
+    case 11:
+      console.log(x++);
+    case 12:
+      console.log(x++);
+    case 13:
+      console.log(x++);
+    case 14:
+      console.log(x++);
+    case 15:
+      console.log(x++);
+    default:
+      console.log("ошибка");
+  }
+  // 5 задание
+  function plus(x,y) {
+    return x + y;
+  }
+  function minus(x,y) {
+    return x - y;
+  }
+
+  function times(x,y) {
+    return x * y;
+  }
+  function divided(x,y) {
+    return x * y;
+  }
+
+  //6 задание
+
+  function mathOperation(arg1, arg2, operation) {
+    var result;
+
+    switch (operation) {
+      case 'plus':
+        result = plus(arg1,arg2);
+        break;
+      case 'minus':
+        result = minus(arg1,arg2);
+        break;
+      case 'times':
+        result = times(arg1,arg2);
+        break;
+      case 'divided':
+        result = divided(arg1,arg2);
+        break;
+      ]
+        return result;
+]
+
+</script>
+</body>
+</html>
