@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 1 Задание
+var i = 2;
+
+  while (i <= 100) {
+    var j = 2;
+    var k = 1;
+
+    while (j < i) {
+      if (i % j === 0)
+        k = 0;
+
+      j++;
+    }
+
+    if (k !== 0)
+      console.log(i);
+
+    i++;
+  }
+// 2 задание
+var a = 0;
+
+do {
+  if (a % 2 === 0 && a !==0) {
+    document.write(a+' - Число четное <br>');
+  } else if (a%2!==0) {
+    document.write(a+' - Число нечетное <br>');
+  } else {
+    document.write(a+' - Ноль <br>');
+  }
+  a++;
+} while (a<11);
+
+// 3 Звдание
+ for (i=0;i<9;document.write(i++ + ' '));
+  // 4 Задание
+  var x = '\nx';
+  for ( var i = 20; i--; ) {
+    console.log( x );
+    x = x + 'x';
+  }
+</script>
+
+</body>
+</html>
