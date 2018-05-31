@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .container {
+      width: 65%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .basket {
+      min-height: 100px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .goods {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="bigPicture">
+    Увеличенный размер
+  </div>
+  <div>
+    <img src="small/1.jpg" alt="img" id="id_1" onclick="changePicture();">
+    <img src="small/2.jpg" alt="img" id="id_2" onclick="changePicture();">
+    <img src="small/3.jpg" alt="img" id="1d_3" onclick="changePicture();">
+  </div>
+</div>
+<div class="container">
+  <div class="basket">
+    <span>Корзина</span>
+    <hr>
+    <div class="basketgoods" id="basket"></div>
+    <span>Стоимость</span>
+  </div>
+  <div class="goods">
+    <div class="good">
+      <div id="good1">
+        <h1 id="head1">Грабли</h1>
+        <p>Любая целина им ни по чем</p>
+        <p>Стоимость:</p>
+        <p id="price1">100</p>
+      </div>
+      <input type="button" name="b1" id="g1" value="Купить" onclick="getItem(this.id)">
+    </div>
+    <div class="good">
+      <div id="good2">
+        <h1 id="head2">Вилы</h1>
+        <span>Для профессиональных колхозников</span><br>
+        <span>Стоимость:</span>
+        <p id="price2">200</p>
+      </div>
+      <input type="button" name="b2" id="g2" value="Купить" onclick="getItem(this.id)">
+    </div>
+    <div class="good">
+      <div class="good" id="good3">
+        <h1 id="head3">Лопата</h1>
+        <p>Даже камни сможет перекопать</p>
+        <p>Стоимость:</p>
+        <p id="price3">300</p>
+      </div>
+      <input type="button" name="b3" id="g3" value="Купить" onclick="getItem(this.id)">
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  // 1 задание
+
+  function changePicture() {
+    var bigPic = document.getElementById('bigPicture');
+    var eventLog = event.target;
+    bigPic.innerText = "";
+    var namePicture = eventLog.id.split('_');
+    var src = 'big/' + namePicture[1] + '.jpg';
+    var pastePic = document.createElement('img');
+    pastePic.src = src;
+    pastePic.onload = function () {
+      alert('Picture found')
+    };
+    pastePic.onerror = function () {
+      alert('Error! Picture is not found');
+      pastePic.remove();
+      bigPic.innerText = 'Ошибка! Картинка не найдена'
+    };
+    bigPic.appendChild(pastePic);
+  }
+
+  // 2 задание
+  function getItem(id) {
+    var basket = document.getElementById('basket');
+    var split = id.split("_");
+    var splitHead = "head" + id[1];
+    var textHead = document.getElementById(splitHead).innerHTML;
+    var splitPrice = 'price' + id[1];
+    var textPrice = document.getElementById(splitPrice).innerHTML;
+    var good = document.createElement("div");
+    var divHead = document.createElement('div');
+    var divPrice = document.createElement('div');
+    var hr = document.createElement("hr");
+    divHead.innerHTML = textHead;
+    divPrice.innerHTML = textPrice;
+    good.appendChild(divHead);
+    good.appendChild(divPrice);
+    basket.appendChild(good);
+    basket.appendChild(hr);
+    good.className = "item";
+  }
+
+</script>
+
+</html>

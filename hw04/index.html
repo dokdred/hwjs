@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //1 задание
+  var num = +prompt('Введите число от 0 до 999');
+  function number(num) {
+    var obj = {};
+    if (1>num || 999<num || isNaN(num)) {
+      alert('Ошибка. Введите число от 0 до 999');
+    } else {
+      obj.ed = num % 10;
+      obj.des = (num - obj.ed) % 100 / 10;
+      obj.sot = ((num - obj.ed) - obj.des*10) / 100;
+      return obj;
+    }
+  }
+  console.log(number(num));
+
+  // 2 задание в игре (src)
+
+
+</script>
+
+</body>
+</html>
